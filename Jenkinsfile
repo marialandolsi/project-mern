@@ -59,7 +59,7 @@ pipeline {
                     steps {
                         script {
                             echo 'Building backend image....'
-                            dir('backend') {
+                            dir('server') {
                                 dockerImageServer = docker.build("${IMAGE_NAME_SERVER}")
                             }
                         }
@@ -72,7 +72,7 @@ pipeline {
                     steps {
                         script {
                             echo 'Building frontend image....'
-                            dir('frontend') {
+                            dir('client') {
                                 dockerImageClient = docker.build("${IMAGE_NAME_CLIENT}")
                             }
                         }
