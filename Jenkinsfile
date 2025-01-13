@@ -6,8 +6,8 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME_SERVER = 'oumaimarouis/facture-server' // Docker Hub username
-        IMAGE_NAME_CLIENT = 'oumaimarouis/facture-client' // Docker Hub username
+        IMAGE_NAME_SERVER = 'maryamlandolsi/mern-server' // Docker Hub username
+        IMAGE_NAME_CLIENT = 'maryamlandolsi/mern-client' // Docker Hub username
     }
 
     stages {
@@ -15,9 +15,9 @@ pipeline {
             steps {
                 script {
                     echo 'Starting Git checkout....'
-                    git branch: 'version1',
-                        url: 'git@github.com:OumaimaRouis/Facturation.git',
-                        credentialsId: 'private_key' // Jenkins credentials ID for GitHub SSH key
+                    git branch: 'main',
+                        url: 'git@github.com:marialandolsi/project-mern.git',
+                        credentialsId: 'git' // Jenkins credentials ID for GitHub SSH key
                 }
             }
         }
